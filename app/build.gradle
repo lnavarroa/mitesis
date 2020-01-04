@@ -1,0 +1,109 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "safeapp.safe"
+        minSdkVersion 15
+        targetSdkVersion 24
+        //versionCode 1.0
+        //versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
+        }
+        debug {
+            debuggable false
+        }
+    }
+}
+
+def var = dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:multidex:1.0.0'
+
+    compile 'com.google.android.gms:play-services-location:9.2.1'
+    compile 'com.google.android.gms:play-services:9.2.1'
+    //compile 'com.google.android.gms:google-services:9.2.1'
+
+    androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.5.2'
+
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:support-v4:24.1.1'
+
+    compile 'org.mapsforge:mapsforge-map-android:0.6.1'
+
+    compile 'org.mapsforge:mapsforge-map-writer:0.6.1'
+
+    compile 'com.android.support:design:24.1.1'
+
+    //MAP
+                //Core
+    compile 'org.mapsforge:mapsforge-core:0.6.1'
+    compile 'org.mapsforge:mapsforge-map:0.6.1'
+    compile 'org.mapsforge:mapsforge-map-reader:0.6.1'
+    compile 'net.sf.kxml:kxml2:2.3.0'
+
+                //Android
+    compile('org.mapsforge:mapsforge-map-android-extras:0.6.0') {
+        transitive = false
+    }
+    compile 'com.caverock:androidsvg:1.2.2-beta-1'
+
+                //Java
+    compile 'org.mapsforge:mapsforge-map-awt:0.6.1'
+    compile 'com.kitfox.svg:svg-salamander:1.0'
+
+    //POI
+                //Core
+    compile 'org.mapsforge:mapsforge-core:0.6.1'
+    compile 'org.mapsforge:mapsforge-poi:0.6.1'
+                //Android
+    compile 'org.mapsforge:mapsforge-poi-android:0.6.1'
+    compile 'org.mapsforge:spatialite-android:0.6.1'
+                //You'll need also the SpatiaLite native library files.
+    compile 'org.mapsforge:mapsforge-poi-awt:0.6.1'
+    compile 'org.xerial:sqlite-jdbc:3.8.11.2'
+
+
+}
+var
+
+/* ************************************Gradle Original*****************************
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "safeapp.safe"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+}
+
+*/
